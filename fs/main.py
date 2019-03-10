@@ -1,21 +1,29 @@
-import os
-def list(source):
-    return os.listdir(source)
+import os, shutil
+def list(src):
+    return os.listdir(src)
 
-def removeFile(source):
-    return os.remove(source)
+def removeFile(src):
+    return os.remove(src)
 
-def removeDirs(source):
-    return os.removedirs(source)
+def removeDirs(src):
+    return os.removedirs(src)
 
-def createFile(source):
-    file = open(source, "w+")
+def createFile(src):
+    file = open(src, "w+")
     return file.close()
 
-def createDirs(source):
-    return os.makedirs(source)
+def createDirs(src):
+    return os.makedirs(src)
 
+#Renombra directorios y archivos
+def rename(src, dst):
+    return os.rename(src,dst)
 
-createFile("/home/augusto/Desktop/manuAugus.txt")
+def cut(src, dst):
+    return os.rename(src,dst)
+    
+def copy(src, dst):
+    return shutil.copy(src,dst)
 
+copy("/home/augusto/Desktop/augusManu.txt", "/home/augusto/Desktop/CopiaaugusManu.txt")
 print(list('/home/augusto/Desktop'))
